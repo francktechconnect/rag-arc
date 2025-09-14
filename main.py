@@ -1,5 +1,6 @@
 # Placeholder for app/main.py
 import os
+import sys
 import streamlit as st
 from dotenv import load_dotenv
 from app.crew_flow import Flow, meta_optimize
@@ -7,6 +8,7 @@ from app.ingest import Ingestor
 from app.rag import RAG
 from app.utils import list_files
 
+sys.path.append(os.path.dirname(__file__))
 load_dotenv(override=True)
 
 st.set_page_config(
