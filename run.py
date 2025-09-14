@@ -1,4 +1,7 @@
-# Placeholder for app/main.py
+# Placeholder for run.py
+
+import sqlite_patch  #
+
 import os
 import sys
 import streamlit as st
