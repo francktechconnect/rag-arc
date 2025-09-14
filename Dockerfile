@@ -1,5 +1,5 @@
 # Placeholder for Dockerfile
-FROM python:3.11-slim
+FROM python:3.12-slim
 
 
 ENV PYTHONDONTWRITEBYTECODE=1 \
@@ -41,4 +41,6 @@ RUN mkdir -p /app/data /app/storage
 
 
 EXPOSE 8501
-CMD ["python","-m","streamlit", "run", "main.py", "--server.port=8501", "--server.address=0.0.0.0"]
+#CMD ["python","-m","streamlit", "run", "main.py", "--server.port=8501", "--server.address=0.0.0.0"]
+CMD python app/ingest.py && \
+    streamlit run run.py --server.port=8501 --server.address=0.0.0.0
