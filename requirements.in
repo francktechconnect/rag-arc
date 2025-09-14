@@ -13,4 +13,3 @@ crewai-tools
 uvicorn
 fastapi
 pytest
-pysqlite3-binary

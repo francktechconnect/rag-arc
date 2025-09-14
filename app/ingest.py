@@ -3,6 +3,7 @@ import os
 from pathlib import Path
 from typing import List
 import chromadb
+from chromadb.config import Settings
 from sentence_transformers import SentenceTransformer
 from langchain_text_splitters import RecursiveCharacterTextSplitter
 
@@ -18,7 +19,15 @@ class Ingestor:
         embed_model: str = "sentence-transformers/all-MiniLM-L6-v2",
     ):
         self.data_dir = data_dir
-        self.client = chromadb.PersistentClient(path=chroma_dir)
+        #self.client = chromadb.PersistentClient(path=chroma_dir)
+        # Use DuckDB + Parquet backend (not SQLite)
+        self.client = chromadb.PersistentClient(
+            path=chroma_dir,
+            # settings=Settings(
+            #     chroma_db_impl="duckdb+parquet",
+            #     persist_directory=chroma_dir
+            # )
+        )
         self.collection = self.client.get_or_create_collection(collection_name)
         self.embedder = SentenceTransformer(embed_model)
         self.splitter = RecursiveCharacterTextSplitter(
