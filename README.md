@@ -7,22 +7,31 @@ It uses **ChromaDB** for embeddings, **Streamlit** for the UI, and supports **lo
 
 ## 🚀 Quick Start
 
+
+### 1) Clone & enter the repo
 ```bash
-# 1) Clone & enter the repo
 git clone <your-repo-url> rag-arc && cd rag-arc
+```
+### 2) Seed data (optional): drop PDFs/HTML into ./data
 
-# 2) Seed data (optional): drop PDFs/HTML into ./data
-# (You can also add files later from the UI or run the crawler.)
+(You can also add files later from the UI or run the crawler.)
 
-# 3) Configure environment
+### 3) Configure environment
+```bash
 cp .env.example .env
 # Edit .env if needed (LLM_MODE=local recommended for first run)
-
-# 4) Build & start services
+```
+### 4) Build & start services
+```bash
 docker compose up -d --build
+```
 
-# 5) (one-time) Pull local model for Ollama
+### 5) (one-time) Pull local model for Ollama (to be tested)
+```bash
 docker exec -it ollama ollama pull llama3.1:8b
+```
 
-# 6) Open the UI
+### 6) Open the UI
+```bash
 # Visit: http://localhost:8501
+```
