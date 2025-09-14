@@ -1,0 +1,16 @@
+streamlit
+chromadb
+sentence-transformers
+langchain-text-splitters
+pydantic
+python-dotenv
+httpx
+beautifulsoup4
+readability-lxml
+lxml
+crewai
+crewai-tools
+uvicorn
+fastapi
+pytest
+
