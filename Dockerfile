@@ -28,13 +28,13 @@ RUN pip install --no-cache-dir -r requirements.txt
 
 
 
-# Copy app
-# COPY app/ ./app/
-# COPY prompts/ ./prompts/
-# COPY scripts/ ./scripts/
-# COPY tests/ ./tests/
-# COPY .env  ./.env
-#COPY .env.example ./.env.example
+
+COPY app/ ./app/
+COPY prompts/ ./prompts/
+COPY scripts/ ./scripts/
+COPY tests/ ./tests/
+COPY .env  ./.env
+
 
 # Create mount points
 RUN mkdir -p /app/data /app/storage
