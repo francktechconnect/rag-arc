@@ -33,7 +33,7 @@ COPY app/ ./app/
 COPY prompts/ ./prompts/
 COPY scripts/ ./scripts/
 COPY tests/ ./tests/
-COPY .env  ./.env
+#COPY .env  ./.env
 
 
 # Create mount points
