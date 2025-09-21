@@ -1,0 +1,14 @@
+services:
+  - type: web
+    name: arc-rag-chatbot
+    env: docker
+    dockerfilePath: ./Dockerfile
+    envVars:
+      - key: LLM_MODE
+        value: hosted
+      - key: DATA_DIR
+        value: /app/data
+      - key: CHROMA_DIR
+        value: /app/storage
+    plan: free
+    autoDeploy: true
