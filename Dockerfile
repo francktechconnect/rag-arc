@@ -35,6 +35,10 @@ COPY scripts/ ./scripts/
 COPY tests/ ./tests/
 COPY data/   ./data/
 COPY storage/ ./storage/
+
+COPY run.py .
+
+
 #COPY .env  ./.env
 
 
